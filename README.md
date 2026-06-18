@@ -1,4 +1,4 @@
-\# DungeonEscape
+# DungeonEscape
 
 
 
@@ -10,31 +10,31 @@ The current goal of the project is to practice Unreal Engine C++ architecture, i
 
 
 
-\## Current Features
+## Current Features
 
 
 
-\* First-person player setup
+* First-person player setup
 
-\* Interaction trace from the player camera
+* Interaction trace from the player camera
 
-\* `IInteractable` interface for interactable actors
+* `IInteractable` interface for interactable actors
 
-\* `UInventoryComponent` for storing collected item IDs
+* `UInventoryComponent` for storing collected item IDs
 
-\* Collectable item actor that adds an item to the inventory
+* Collectable item actor that adds an item to the inventory
 
-\* Prototype lock actor with inventory-based key interaction
+* Prototype lock actor with inventory-based key interaction
 
-\* Mover component for moving actors
+* Mover component for moving actors
 
-\* Trigger component for activating mover logic
+* Trigger component for activating mover logic
 
-\* Basic pressure plate / door-style interaction flow
+* Basic pressure plate / door-style interaction flow
 
 
 
-\## Technical Focus
+## Technical Focus
 
 
 
@@ -46,29 +46,29 @@ Main Unreal Engine concepts practiced in this project:
 
 
 
-\* Actors
+* Actors
 
-\* Actor Components
+* Actor Components
 
-\* Interfaces
+* Interfaces
 
-\* Collision and trace channels
+* Collision and trace channels
 
-\* `UPROPERTY`
+* `UPROPERTY`
 
-\* `UFUNCTION`
+* `UFUNCTION`
 
-\* `TObjectPtr`
+* `TObjectPtr`
 
-\* `TSet`
+* `TSet`
 
-\* Runtime component lookup
+* Runtime component lookup
 
-\* Initial separation of responsibilities between player interaction, inventory storage, and interactable world actors
+* Initial separation of responsibilities between player interaction, inventory storage, and interactable world actors
 
 
 
-\## Project Structure
+## Project Structure
 
 
 
@@ -76,11 +76,11 @@ Important folders:
 
 
 
-\* `Source/` — C++ source code
+* `Source/` — C++ source code
 
-\* `Content/` — Unreal Engine assets, Blueprints, maps, materials
+* `Content/` — Unreal Engine assets, Blueprints, maps, materials
 
-\* `Config/` — project configuration files
+* `Config/` — project configuration files
 
 
 
@@ -88,7 +88,7 @@ Generated folders such as `Binaries/`, `Intermediate/`, `Saved/`, `DerivedDataCa
 
 
 
-\## Git LFS
+## Git LFS
 
 
 
@@ -96,13 +96,13 @@ This repository uses Git LFS for Unreal Engine binary assets such as:
 
 
 
-\* `.uasset`
+* `.uasset`
 
-\* `.umap`
+* `.umap`
 
-\* `.ubulk`
+* `.ubulk`
 
-\* `.uexp`
+* `.uexp`
 
 
 
@@ -118,21 +118,21 @@ git lfs install
 
 
 
-\## Requirements
+## Requirements
 
 
 
-\* Unreal Engine 5
+* Unreal Engine 5
 
-\* Visual Studio 2022 with C++ tools
+* Visual Studio 2022 with C++ tools
 
-\* Git
+* Git
 
-\* Git LFS
+* Git LFS
 
 
 
-\## Status
+## Status
 
 
 
