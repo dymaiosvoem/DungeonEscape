@@ -52,8 +52,6 @@ FName ALock::GetRequiredItemId()const
 
 void ALock::Interact_Implementation(AActor* Interactor)
 {
-	UE_LOG(LogTemp, Display, TEXT("Lock Actor Required Item Id is %s"), *GetRequiredItemId().ToString());
-
 	if (!Interactor)
 	{
 		return;
@@ -66,10 +64,26 @@ void ALock::Interact_Implementation(AActor* Interactor)
 		return;
 	}
 
-	bool bWasKeyConsumed = InventoryComponent->RemoveItem(RequiredItemId);
-
-	if (bWasKeyConsumed)
+	if (!GetIsKeyPlaced())
 	{
-		SetIsKeyPlaced(bWasKeyConsumed);
-	} 
+		bool bWasItemRemoved = InventoryComponent->RemoveItem(RequiredItemId);
+
+		if (!bWasItemRemoved)
+		{
+			return;
+		}
+
+		SetIsKeyPlaced(true);
+	}
+	else
+	{
+		bool bWasItemAdded = InventoryComponent->AddItem(RequiredItemId);
+
+		if (!bWasItemAdded)
+		{
+			return;
+		}
+
+		SetIsKeyPlaced(false);
+	}
 }
