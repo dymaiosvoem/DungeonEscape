@@ -122,7 +122,7 @@ git lfs install
 
 
 
-* Unreal Engine 5
+* Unreal Engine 5.6
 
 * Visual Studio 2022 with C++ tools
 
@@ -136,7 +136,7 @@ git lfs install
 
 
 
-This is a learning project and is actively evolving.
+This is a completed learning milestone project.
 
 
 
