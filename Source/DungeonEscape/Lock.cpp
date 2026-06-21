@@ -18,8 +18,11 @@ ALock::ALock()
 	TriggerComp = CreateDefaultSubobject<UTriggerComponent>(FName(TEXT("TriggerComponent")));
 	TriggerComp->SetupAttachment(RootComp);
 
-	KeyItemMeshComp = CreateDefaultSubobject<UStaticMeshComponent>(FName(TEXT("KeyItemMeshComponent")));
-	KeyItemMeshComp->SetupAttachment(RootComp);
+	PlacedItemMeshComp = CreateDefaultSubobject<UStaticMeshComponent>(FName(TEXT("KeyItemMeshComponent")));
+	PlacedItemMeshComp->SetupAttachment(RootComp);
+	PlacedItemMeshComp->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+	PlacedItemMeshComp->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Ignore);
+	PlacedItemMeshComp->SetCollisionResponseToChannel(ECC_GameTraceChannel2, ECollisionResponse::ECR_Block);
 
 	Tags.Add(LockItemTag);
 }
@@ -34,7 +37,7 @@ void ALock::SetIsKeyPlaced(bool bNewIsKeyPlaced)
 	bIsKeyPlaced = bNewIsKeyPlaced;
 
 	TriggerComp->Trigger(GetIsKeyPlaced());
-	KeyItemMeshComp->SetVisibility(GetIsKeyPlaced());
+	PlacedItemMeshComp->SetVisibility(GetIsKeyPlaced());
 }
 
 // Called when the game starts or when spawned
@@ -52,6 +55,8 @@ FName ALock::GetRequiredItemId()const
 
 void ALock::Interact_Implementation(AActor* Interactor)
 {
+	UE_LOG(LogTemp, Display, TEXT("LOCK INTERACTED: %s"), *GetName());
+	
 	if (!Interactor)
 	{
 		return;

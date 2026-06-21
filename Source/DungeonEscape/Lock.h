@@ -39,7 +39,7 @@ private:
 	TObjectPtr<UTriggerComponent> TriggerComp;
 
 	UPROPERTY(VisibleAnywhere)
-	TObjectPtr<UStaticMeshComponent> KeyItemMeshComp;
+	TObjectPtr<UStaticMeshComponent> PlacedItemMeshComp;
 
 	UPROPERTY(EditAnywhere)
 	FName RequiredItemId;
